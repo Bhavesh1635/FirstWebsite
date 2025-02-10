@@ -69,6 +69,24 @@ Right:0px;
 
 
 }
+.Text-box {
+    width: 400px;
+    height: 350px;
+position:absolute;
+top: 100px;
+Right:0px;
+resize: none;
+
+}
+#submit {
+    width: 55px;
+    height: 35px;
+    position:absolute;
+    top: 421px;
+Right:0px;
+resize: none;
+    
+}
 
         
 
@@ -116,13 +134,14 @@ Right:0px;
         </ol>
                 
             <img id="Koala" src="https://cdn.britannica.com/26/162626-050-3534626F/Koala.jpg"width=" 500"height="500" style="position: relative; top: -460px;"></a>
-        <form action="/action_page.php">
-  <p><label for="Text-box"></label></p>
-  <textarea id="Text-box" name="Text-box" rows="0" cols="0"></textarea>
-  <br>
-  <input type="submit" value="Submit">
-</form>
-  
+            <form action="/action_page.php">
+              <p><label for=""></label></p>
+                <label class="Text-box" for="username"></label>
+                              <input class="Text-box" type="text" id="username" name="Guest Typed">
+            <br>
+                <input id="submit"type="submit" value="Submit">
+              </form>
+              
   
 
   
@@ -136,3 +155,15 @@ Right:0px;
 
 
 </html>
+<script>
+<a href='action_page.php' onclick='show_more_menu()'>More >>></a>
+
+
+
+
+
+
+
+
+
+</script>
