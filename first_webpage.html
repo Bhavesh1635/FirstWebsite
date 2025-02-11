@@ -64,8 +64,8 @@ h2{ font-family:monospace;
 position:absolute;
 top: 100px;
 Right:0px;
-
-
+textarea { resize: none; }
+textarea { resize: none; }
 
 
 }
@@ -75,8 +75,8 @@ Right:0px;
 position:absolute;
 top: 100px;
 Right:0px;
-resize: none;
-
+textarea { resize: none; }
+textarea { resize: none; }
 }
 #submit {
     width: 55px;
@@ -84,7 +84,8 @@ resize: none;
     position:absolute;
     top: 421px;
 Right:0px;
-resize: none;
+textarea { resize: none; }
+textarea { resize: none; }
     
 }
 
@@ -135,15 +136,12 @@ resize: none;
                 
             <img id="Koala" src="https://cdn.britannica.com/26/162626-050-3534626F/Koala.jpg"width=" 500"height="500" style="position: relative; top: -460px;"></a>
             <form action="/action_page.php">
-              <p><label for=""></label></p>
-                <label class="Text-box" for="username"></label>
-                              <input class="Text-box" type="text" id="username" name="Guest Typed">
-            <br>
-                <input id="submit"type="submit" value="Submit">
+                <p><label id="Text-box" for="Bhavesh"></label></p>
+                <textarea id="Text-box" name="text" rows="4" cols="50">At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.</textarea>
+                <br>
+                <input id="submit" type="submit" value="Submit">
               </form>
-              
-  
-
+               
   
 
     </div>
@@ -156,7 +154,7 @@ resize: none;
 
 </html>
 <script>
-<a href='action_page.php' onclick='show_more_menu()'>More >>></a>
+alert("Hello");
 
 
 
