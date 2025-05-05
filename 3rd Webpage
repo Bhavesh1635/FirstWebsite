@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Text Box</title>
+  <style>
+    label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .input-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+    }
+
+    textarea {
+      min-height: 40px;
+      min-width: 300px;
+      resize: none;
+      overflow: hidden;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    input [type="submit"] 
+
+    #submittedContainer {
+      margin-top: 20px;
+    }
+
+    #submittedText {
+      display: block;
+      margin-top: 5px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Submit Your Info</h1>
+
+  <form id="userForm">
+    <label for="name">Name:</label>
+    <input type="text" id="nameInput" name="name" required><br><br>
+
+    <label for="text">Text:</label>
+
+    <div class="input-row">
+      <textarea id="text" name="text" required placeholder="Hello my name is..."></textarea>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
+  <div id="submittedContainer" style="display: none;">
+    <p><strong>Name:</strong> <span id="displayName"></span></p>
+    <p><strong>Text:</strong></p>
+    <textarea id="submittedText" readonly></textarea>
+  </div>
+
+  <script>
+    const inputTextarea = document.getElementById('text');
+    const nameInput = document.getElementById('nameInput');
+    const form = document.getElementById('userForm');
+    const submittedContainer = document.getElementById('submittedContainer');
+    const submittedTextarea = document.getElementById('submittedText');
+    const displayName = document.getElementById('displayName');
+
+    function autoResizeAndGrowWidth(el) {
+      el.style.height = 'auto';
+      el.style.width = 'auto';
+
+      el.style.height = el.scrollHeight + 'px';
+
+      const lines = el.value.split('\n');
+      const currentLine = lines[lines.length - 1];
+      const avgCharWidth = 8;
+      const padding = 20;
+      const calculatedWidth = Math.max(300, Math.min(800, currentLine.length * avgCharWidth + padding));
+      el.style.width = calculatedWidth + 'px';
+    }
+
+    inputTextarea.addEventListener('input', function () {
+      autoResizeAndGrowWidth(this);
+    });
+
+    autoResizeAndGrowWidth(inputTextarea);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nameValue = nameInput.value;
+      const textValue = inputTextarea.value;
+
+      submittedTextarea.value = textValue;
+      submittedTextarea.style.height = inputTextarea.style.height;
+      submittedTextarea.style.width = inputTextarea.style.width;
+
+      displayName.textContent = nameValue;
+
+      form.style.display = 'none';
+      submittedContainer.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
