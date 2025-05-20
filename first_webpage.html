@@ -4,13 +4,23 @@
   <title id="title">Bhavesh-Website</title>
   <style>
     body {
-      background-color: rgb(200, 126, 42);
       margin: 0;
       padding: 0;
       width: 1415px;
       height: 650px;
       overflow-y: hidden;
       font-family: monospace;
+      background: radial-gradient(circle, #6dd5fa, #2980b9);
+      animation: glow 10s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        background: radial-gradient(circle, #6dd5fa, #2980b9);
+      }
+      50% {
+        background: radial-gradient(circle, #8ec5fc, #3f5efb);
+      }
     }
 
     h1, h2, h3, p, li {
@@ -26,29 +36,28 @@
     }
 
     .rectangle {
-      width: 1420px;
-      height: 650px;
-      border: 6px solid saddlebrown;
-    }
+  width: 1420px;
+  height: 650px;
+  border: 6px solid #6dd5fa; /* initial color */
+  animation: borderGlow 10s ease-in-out infinite;
+  background-color: rgba(255, 255, 255, 0.15); /* Optional overlay */
+  backdrop-filter: blur(4px); /* Optional frosted glass */
+}
 
-    #Gc {
-      display: block;
-      margin-left: 15px;
-    }
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: #6dd5fa;
+  }
+  33% {
+    border-color: #8ec5fc;
+  }
+  66% {
+    border-color: #2980b9;
+  }
+}
 
-    #Heading {
-      margin-left: 15px;
-    }
 
-    #Quotes {
-      margin-left: 15px;
-    }
-
-    #EntertainmentHeading {
-      margin-left: 15px;
-    }
-
-    #EntertainmentList {
+    #Gc, #Heading, #Quotes, #EntertainmentHeading, #EntertainmentList {
       margin-left: 15px;
     }
 
@@ -62,19 +71,19 @@
     #txtmy {
       margin-left: 970px;
       position: absolute;
-      top: 70px;
+      top: 5px;
     }
 
     #textbxlink {
       margin-left: 1000px;
       position: absolute;
-      top: 170px;
+      top: 110px;
     }
 
     #forthth {
       margin-left: 1000px;
       position: absolute;
-      top: 190px;
+      top: 130px;
     }
 
     #Bhaveshwebsite {
@@ -95,7 +104,7 @@
       <li><a href="https://www.coolmathgames.com/" target="_blank" rel="noopener noreferrer">Cool Math Games</a></li>
     </ol>
 
-    <h1 id="txtmy">Links To Other Games and Webpages I Made:</h1>
+    <h1 id="txtmy"><u>Links To Other Games and Webpages I Made:</u></h1>
     <ul>
       <li id="textbxlink">
         <a href="https://repository2-kappa.vercel.app/" target="_blank" rel="noopener noreferrer">Text Box Link</a>
